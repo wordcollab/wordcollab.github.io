@@ -1,86 +1,89 @@
 <!doctype html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Abdel Aziz Besseghir — Plaquiste & Décoration Intérieure</title>
-  <meta name="description" content="Plaquiste qualifié — Faux Plafonds, Cloisons, Finitions — Relizane, Algérie"/>
+  <title>عبد العزيز بسغير — جبس بورد وديكور داخلي</title>
+  <meta name="description" content="متخصص في تركيب الجبس بورد، الأسقف المعلقة، الكواليس والتشطيبات الداخلية — ولاية وهران، الجزائر"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--blue:#173056;--blue2:#1e3d6e;--white:#fff;--light:#f7f9fb;--muted:#64748b;--green:#25d366}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:var(--light);color:#0b1220}
+    body{font-family:'Tajawal',sans-serif;background:var(--light);color:#0b1220;direction:rtl}
 
-    /* ── HERO ── */
+    /* HERO */
     .hero{min-height:100vh;background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 60%,#2a5298 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-    .hero-logo{width:90px;height:90px;border-radius:20px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:var(--white);margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
-    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;color:var(--white);margin-bottom:8px;letter-spacing:-0.5px}
-    .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(255,255,255,0.75);margin-bottom:6px}
-    .hero-loc{font-size:.95rem;color:rgba(255,255,255,0.5);margin-bottom:40px}
+    .hero-logo{width:90px;height:90px;border-radius:20px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;color:var(--white);margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+    .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--white);margin-bottom:8px;letter-spacing:0}
+    .hero-sub{font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,0.8);margin-bottom:6px;font-weight:500}
+    .hero-loc{font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:40px}
     .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:1rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:1rem;font-weight:700;font-family:'Tajawal',sans-serif;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
     .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
     .btn-white{background:var(--white);color:var(--blue)}
     .btn-outline{background:rgba(255,255,255,0.1);color:var(--white);border:2px solid rgba(255,255,255,0.3);backdrop-filter:blur(8px)}
-    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:.85rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite}
+    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite;font-family:'Tajawal',sans-serif}
     .scroll-hint::after{content:'↓';font-size:1.2rem}
     @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section{padding:70px 20px}
     .container{max-width:1100px;margin:0 auto}
     .section-title{text-align:center;margin-bottom:48px}
-    .section-title h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--blue);margin-bottom:8px}
-    .section-title p{color:var(--muted);font-size:1rem}
+    .section-title h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--blue);margin-bottom:8px}
+    .section-title p{color:var(--muted);font-size:1rem;font-weight:500}
     .section-title .line{width:60px;height:4px;background:var(--blue);border-radius:2px;margin:12px auto 0}
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     .about-section{background:var(--white)}
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .about-text p{color:#374151;line-height:1.8;font-size:1rem;margin-bottom:16px}
+    .about-text p{color:#374151;line-height:2;font-size:1.05rem;margin-bottom:16px;font-weight:400}
     .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-    .about-tag{background:#eff6ff;color:var(--blue);padding:6px 14px;border-radius:999px;font-size:.88rem;font-weight:500;border:1px solid #bfdbfe}
+    .about-tag{background:#eff6ff;color:var(--blue);padding:6px 14px;border-radius:999px;font-size:.9rem;font-weight:700;border:1px solid #bfdbfe}
     .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .stat-card{background:var(--light);border-radius:16px;padding:24px;text-align:center;border:1px solid #e2e8f0}
-    .stat-card .num{font-size:2.2rem;font-weight:800;color:var(--blue)}
-    .stat-card .label{color:var(--muted);font-size:.9rem;margin-top:4px}
+    .stat-card .num{font-size:2.4rem;font-weight:900;color:var(--blue)}
+    .stat-card .label{color:var(--muted);font-size:.95rem;margin-top:4px;font-weight:500}
 
-    /* ── GALLERY ── */
+    /* GALLERY */
     .gallery-section{background:var(--light)}
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-    .gallery-card{border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
+    .gallery-card{border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s}
     .gallery-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(23,48,86,0.15)}
-    .gallery-img{width:100%;height:220px;object-fit:cover;display:block;background:linear-gradient(135deg,#e2e8f0,#cbd5e1)}
+    .gallery-img{width:100%;height:220px;object-fit:cover;display:block}
     .gallery-img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--blue);gap:8px}
     .gallery-img-placeholder span{font-size:2.5rem}
-    .gallery-img-placeholder p{font-size:.85rem;color:var(--muted)}
+    .gallery-img-placeholder p{font-size:.9rem;color:var(--muted);font-weight:500}
     .gallery-info{padding:16px}
-    .gallery-info h3{font-size:1rem;font-weight:700;color:#0b1220;margin-bottom:6px}
-    .gallery-info p{font-size:.88rem;color:var(--muted);line-height:1.5}
+    .gallery-info h3{font-size:1rem;font-weight:800;color:#0b1220;margin-bottom:6px}
+    .gallery-info p{font-size:.9rem;color:var(--muted);line-height:1.7;font-weight:400}
     .gallery-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-    .gtag{background:#eff6ff;color:var(--blue);padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:500}
+    .gtag{background:#eff6ff;color:var(--blue);padding:3px 10px;border-radius:999px;font-size:.82rem;font-weight:700}
 
-    /* ── VIDEOS ── */
+    /* VIDEOS */
     .videos-section{background:var(--white)}
     .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
     .video-card{border-radius:16px;overflow:hidden;background:var(--light);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
     .video-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#1e3a5f,#173056);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white);gap:10px}
-    .video-placeholder span{font-size:3rem;opacity:.6}
-    .video-placeholder p{font-size:.9rem;opacity:.5}
+    .video-placeholder span{font-size:3rem;opacity:.7}
+    .video-placeholder p{font-size:.9rem;opacity:.5;font-weight:500}
     .video-card .gallery-info{background:var(--white)}
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     .contact-section{background:linear-gradient(135deg,var(--blue),var(--blue2));text-align:center;padding:80px 20px}
-    .contact-section h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--white);margin-bottom:12px}
-    .contact-section p{color:rgba(255,255,255,0.7);font-size:1rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+    .contact-section h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:var(--white);margin-bottom:12px}
+    .contact-section p{color:rgba(255,255,255,0.7);font-size:1.05rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;font-weight:400;line-height:1.8}
     .contact-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .btn-whatsapp{background:var(--green);color:var(--white);font-size:1.05rem;padding:16px 32px;border-radius:14px}
-    .btn-phone{background:rgba(255,255,255,0.12);color:var(--white);border:2px solid rgba(255,255,255,0.25);font-size:1.05rem;padding:16px 32px;border-radius:14px}
+    .btn-whatsapp{background:var(--green);color:var(--white);font-size:1.1rem;padding:16px 32px;border-radius:14px}
+    .btn-phone{background:rgba(255,255,255,0.12);color:var(--white);border:2px solid rgba(255,255,255,0.25);font-size:1.1rem;padding:16px 32px;border-radius:14px}
 
-    /* ── FOOTER ── */
-    footer{background:#0b1220;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:.88rem}
+    /* FOOTER */
+    footer{background:#0b1220;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:.9rem;font-weight:500}
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media(max-width:768px){
       .about-grid{grid-template-columns:1fr}
       .hero-btns{flex-direction:column;align-items:center}
@@ -92,91 +95,91 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-logo">A</div>
-  <h1>Abdel Aziz Besseghir</h1>
-  <p class="hero-sub">Plaquiste · Faux Plafonds · Finitions Intérieures</p>
-  <p class="hero-loc">📍 Relizane, Algérie</p>
+  <div class="hero-logo">ع</div>
+  <h1>عبد العزيز بسغير</h1>
+  <p class="hero-sub">جبس بورد · أسقف معلقة · تشطيبات داخلية</p>
+  <p class="hero-loc">📍 ولاية رليزان، الجزائر</p>
   <div class="hero-btns">
-    <a href="#galerie" class="btn btn-white">🖼️ Voir mes réalisations</a>
-    <a href="#videos" class="btn btn-outline">🎬 Voir les vidéos</a>
+    <a href="#اعمال" class="btn btn-white">🖼️ شاهد أعمالي</a>
+    <a href="#فيديو" class="btn btn-outline">🎬 فيديوهات الأشغال</a>
   </div>
-  <div class="scroll-hint">Défiler</div>
+  <div class="scroll-hint">تمرير للأسفل</div>
 </section>
 
 <!-- ABOUT -->
-<section class="about-section" id="about">
+<section class="about-section" id="من-انا">
   <div class="container">
     <div class="section-title">
-      <h2>Qui suis-je ?</h2>
+      <h2>من أنا؟</h2>
       <div class="line"></div>
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Plaquiste qualifié avec plus de <strong>4 ans d'expérience</strong> en pose de faux plafonds décoratifs, cloisons sèches, joints, enduit lissé et finitions intérieures.</p>
-        <p>Intervenant sur des chantiers résidentiels et commerciaux à Relizane et ses environs. Titulaire d'un <strong>certificat professionnel</strong> en Décoration d'intérieur — Dar El Hiraf, Relizane 2022.</p>
+        <p>حرفي متخصص في تركيب <strong>الجبس بورد</strong> بخبرة تفوق <strong>4 سنوات</strong> في مجال الأسقف المعلقة الديكورية، الكواليس الجافة، المفاصل، اللصاق الملساء والتشطيبات الداخلية.</p>
+        <p>أعمل على مشاريع سكنية وتجارية في رليزان وما جاورها. حاصل على <strong>شهادة مهنية</strong> في الديكور الداخلي وتهيئة المحلات — دار الحرف، رليزان 2022.</p>
         <div class="about-tags">
-          <span class="about-tag">Faux plafonds décoratifs</span>
-          <span class="about-tag">Cloisons sèches BA13</span>
-          <span class="about-tag">Isolation phonique</span>
-          <span class="about-tag">Joints & enduit lissé</span>
-          <span class="about-tag">Caissons cache-rideau</span>
-          <span class="about-tag">Spots LED encastrés</span>
-          <span class="about-tag">Préparation avant peinture</span>
+          <span class="about-tag">أسقف معلقة ديكورية</span>
+          <span class="about-tag">كواليس BA13</span>
+          <span class="about-tag">عزل صوتي</span>
+          <span class="about-tag">مفاصل ولصاق ملساء</span>
+          <span class="about-tag">كواليس ستارة</span>
+          <span class="about-tag">إضاءة LED مدمجة</span>
+          <span class="about-tag">تجهيز قبل الدهن</span>
         </div>
       </div>
       <div class="about-stats">
-        <div class="stat-card"><div class="num">+4</div><div class="label">Ans d'expérience</div></div>
-        <div class="stat-card"><div class="num">+50</div><div class="label">Chantiers réalisés</div></div>
-        <div class="stat-card"><div class="num">100%</div><div class="label">Qualité garantie</div></div>
-        <div class="stat-card"><div class="num">2022</div><div class="label">Certifié Dar El Hiraf</div></div>
+        <div class="stat-card"><div class="num">+4</div><div class="label">سنوات خبرة</div></div>
+        <div class="stat-card"><div class="num">+50</div><div class="label">مشروع منجز</div></div>
+        <div class="stat-card"><div class="num">100%</div><div class="label">جودة مضمونة</div></div>
+        <div class="stat-card"><div class="num">2022</div><div class="label">شهادة دار الحرف</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery-section" id="galerie">
+<section class="gallery-section" id="اعمال">
   <div class="container">
     <div class="section-title">
-      <h2>Mes Réalisations</h2>
-      <p>Quelques exemples de mes travaux récents</p>
+      <h2>أعمالي</h2>
+      <p>بعض من مشاريعي المنجزة مؤخراً</p>
       <div class="line"></div>
     </div>
     <div class="gallery-grid">
 
       <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🏠</span><p>Photo à venir</p></div>
+        <div class="gallery-img-placeholder"><span>🏠</span><p>صورة قريباً</p></div>
         <div class="gallery-info">
-          <h3>Faux plafond décoratif avec spots LED</h3>
-          <p>Réalisation complète avec éclairage encastré LED — salon résidentiel.</p>
-          <div class="gallery-tags"><span class="gtag">Faux plafond</span><span class="gtag">Spots LED</span></div>
+          <h3>سقف معلق ديكوري مع إضاءة LED</h3>
+          <p>إنجاز كامل مع إضاءة LED مدمجة في غرفة المعيشة.</p>
+          <div class="gallery-tags"><span class="gtag">سقف معلق</span><span class="gtag">LED</span></div>
         </div>
       </div>
 
       <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🧱</span><p>Photo à venir</p></div>
+        <div class="gallery-img-placeholder"><span>🧱</span><p>صورة قريباً</p></div>
         <div class="gallery-info">
-          <h3>Cloison sèche avec isolation phonique</h3>
-          <p>Pose de cloisons BA13 avec laine de verre pour isolation phonique.</p>
-          <div class="gallery-tags"><span class="gtag">Cloison BA13</span><span class="gtag">Isolation</span></div>
+          <h3>كاليسون جافة مع عزل صوتي</h3>
+          <p>تركيب كاليسون BA13 مع لباد صوفي للعزل الصوتي.</p>
+          <div class="gallery-tags"><span class="gtag">BA13</span><span class="gtag">عزل صوتي</span></div>
         </div>
       </div>
 
       <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🎨</span><p>Photo à venir</p></div>
+        <div class="gallery-img-placeholder"><span>🎨</span><p>صورة قريباً</p></div>
         <div class="gallery-info">
-          <h3>Finitions intérieures — enduit lissé</h3>
-          <p>Préparation et lissage complet des murs avant peinture.</p>
-          <div class="gallery-tags"><span class="gtag">Enduit</span><span class="gtag">Lissage</span></div>
+          <h3>تشطيبات داخلية — لصاق ملساء</h3>
+          <p>تجهيز وتلميع الجدران قبل الدهن بتشطيب احترافي.</p>
+          <div class="gallery-tags"><span class="gtag">لصاق</span><span class="gtag">تشطيب</span></div>
         </div>
       </div>
 
       <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🪟</span><p>Photo à venir</p></div>
+        <div class="gallery-img-placeholder"><span>🪟</span><p>صورة قريباً</p></div>
         <div class="gallery-info">
-          <h3>Caisson cache-rideau sur mesure</h3>
-          <p>Fabrication et installation avec éclairage indirect intégré.</p>
-          <div class="gallery-tags"><span class="gtag">Sur mesure</span><span class="gtag">Éclairage indirect</span></div>
+          <h3>كاليسون ستارة على مقاس</h3>
+          <p>صنع وتركيب كاليسون ستارة بجبس مع إضاءة غير مباشرة.</p>
+          <div class="gallery-tags"><span class="gtag">على مقاس</span><span class="gtag">إضاءة غير مباشرة</span></div>
         </div>
       </div>
 
@@ -185,28 +188,28 @@
 </section>
 
 <!-- VIDEOS -->
-<section class="videos-section" id="videos">
+<section class="videos-section" id="فيديو">
   <div class="container">
     <div class="section-title">
-      <h2>Vidéos de chantier</h2>
-      <p>Suivez mes travaux en vidéo</p>
+      <h2>فيديوهات الأشغال</h2>
+      <p>تابع أعمالي عن قرب</p>
       <div class="line"></div>
     </div>
     <div class="videos-grid">
 
       <div class="video-card">
-        <div class="video-placeholder"><span>▶️</span><p>Vidéo à venir</p></div>
+        <div class="video-placeholder"><span>▶️</span><p>فيديو قريباً</p></div>
         <div class="gallery-info">
-          <h3>Pose de faux plafond en direct</h3>
-          <p>Timelapse d'une installation complète de faux plafond.</p>
+          <h3>تركيب سقف معلق — مباشرة من الورشة</h3>
+          <p>مراحل التركيب الكاملة من البداية للنهاية.</p>
         </div>
       </div>
 
       <div class="video-card">
-        <div class="video-placeholder"><span>▶️</span><p>Vidéo à venir</p></div>
+        <div class="video-placeholder"><span>▶️</span><p>فيديو قريباً</p></div>
         <div class="gallery-info">
-          <h3>Avant / Après — Rénovation complète</h3>
-          <p>Transformation d'une pièce de A à Z.</p>
+          <h3>قبل وبعد — تحويل كامل للغرفة</h3>
+          <p>شاهد الفرق قبل وبعد التشطيب الكامل.</p>
         </div>
       </div>
 
@@ -215,19 +218,19 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
+<section class="contact-section" id="تواصل">
   <div class="container">
-    <h2>Demandez un devis gratuit</h2>
-    <p>Contactez-moi pour discuter de votre projet. Je vous réponds rapidement.</p>
+    <h2>تواصل معي للحصول على عرض سعر مجاني</h2>
+    <p>اتصل بي لمناقشة مشروعك. أرد بسرعة وأقدم لك الأفضل بسعر مناسب.</p>
     <div class="contact-btns">
-      <a href="https://wa.me/213672253570" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
-      <a href="tel:+213672253570" class="btn btn-phone">📞 +213 672 25 35 70</a>
+      <a href="https://wa.me/213672253570" class="btn btn-whatsapp" target="_blank">💬 واتساب</a>
+      <a href="tel:+213672253570" class="btn btn-phone">📞 0672 25 35 70</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="yr"></span> Abdel Aziz Besseghir — Plaquiste · Relizane, Algérie
+  © <span id="yr"></span> عبد العزيز بسغير — جبس بورد وديكور داخلي · رليزان، الجزائر
 </footer>
 
 <script>
@@ -235,7 +238,8 @@
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       e.preventDefault();
-      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth'});
     });
   });
 </script>
