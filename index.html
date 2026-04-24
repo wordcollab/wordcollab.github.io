@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>BnD Déco — Besseghir Abdel Aziz</title>
+  <title>BnD Déco</title>
   <meta name="description" content="Plaquiste — Faux Plafonds, Cloisons, Finitions Intérieures — Relizane, Algérie"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -16,17 +16,19 @@
     /* HERO */
     .hero{min-height:100vh;background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 60%,#2a5298 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-    .hero-logo{width:110px;height:110px;border-radius:20px;overflow:hidden;margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.15)}
-    .hero-logo img{width:100%;height:100%;object-fit:cover}
-    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:900;color:var(--white);margin-bottom:6px;letter-spacing:0;direction:ltr}
-    .hero-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(255,255,255,0.75);margin-bottom:6px;font-weight:500;direction:ltr}
-    .hero-loc{font-size:.95rem;color:rgba(255,255,255,0.5);margin-bottom:40px;direction:ltr}
-    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+    /* اللوغو — أكبر حجماً */
+    .hero-logo{width:200px;height:200px;border-radius:24px;overflow:hidden;margin-bottom:32px;box-shadow:0 8px 40px rgba(0,0,0,0.4);border:2px solid rgba(255,255,255,0.15);position:relative;z-index:1}
+    .hero-logo img{width:100%;height:100%;object-fit:contain;background:#fff;padding:10px}
+
+    .hero-sub{font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,0.85);margin-bottom:6px;font-weight:600;direction:ltr;position:relative;z-index:1}
+    .hero-loc{font-size:1rem;color:rgba(255,255,255,0.55);margin-bottom:44px;direction:ltr;position:relative;z-index:1}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:1rem;font-weight:700;font-family:'Tajawal',sans-serif;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;direction:ltr}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.25)}
     .btn-white{background:var(--white);color:var(--blue)}
     .btn-outline{background:rgba(255,255,255,0.1);color:var(--white);border:2px solid rgba(255,255,255,0.3);backdrop-filter:blur(8px)}
-    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite}
+    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite;z-index:1}
     .scroll-hint::after{content:'↓';font-size:1.2rem}
     @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
@@ -49,10 +51,10 @@
     .stat-card .num{font-size:2.4rem;font-weight:900;color:var(--blue)}
     .stat-card .label{color:var(--muted);font-size:.95rem;margin-top:4px;font-weight:500}
 
-    /* GALLERY */
+    /* GALLERY CARDS */
     .gallery-section{background:var(--light)}
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-    .gallery-card{border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s}
+    .gallery-card{border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
     .gallery-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(23,48,86,0.15)}
     .gallery-img{width:100%;height:220px;object-fit:cover;display:block}
     .gallery-img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--blue);gap:8px}
@@ -68,11 +70,14 @@
     /* VIDEOS */
     .videos-section{background:var(--white)}
     .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-    .video-card{border-radius:16px;overflow:hidden;background:var(--light);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+    .video-card{border-radius:16px;overflow:hidden;background:var(--light);box-shadow:0 4px 20px rgba(0,0,0,0.06);cursor:pointer;transition:transform .3s}
+    .video-card:hover{transform:translateY(-4px)}
     .video-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#1e3a5f,#173056);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white);gap:10px}
     .video-placeholder span{font-size:3rem;opacity:.7}
     .video-placeholder p{font-size:.9rem;opacity:.5;font-weight:500}
     .video-card .gallery-info{background:var(--white)}
+    /* للفيديوهات الحقيقية */
+    .video-frame{width:100%;aspect-ratio:16/9;border:none;display:block}
 
     /* CONTACT */
     .contact-section{background:linear-gradient(135deg,var(--blue),var(--blue2));text-align:center;padding:80px 20px}
@@ -85,12 +90,51 @@
     /* FOOTER */
     footer{background:#0b1220;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:.9rem}
 
+    /* ====== MODAL ====== */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+    .modal-overlay.active{display:flex}
+    .modal-box{background:var(--white);border-radius:20px;width:100%;max-width:900px;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .3s ease}
+    @keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+    .modal-header{padding:20px 24px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:10;border-radius:20px 20px 0 0}
+    .modal-header h3{font-size:1.2rem;font-weight:900;color:var(--blue)}
+    .modal-close{background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--muted);line-height:1;padding:4px 8px;border-radius:8px;transition:background .2s}
+    .modal-close:hover{background:#f1f5f9}
+    .modal-body{padding:24px}
+
+    /* صور في المودال */
+    .modal-photos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .modal-photo{border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .2s}
+    .modal-photo:hover{transform:scale(1.02)}
+    .modal-photo img{width:100%;height:180px;object-fit:cover;display:block}
+    .modal-photo .photo-placeholder{width:100%;height:180px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--blue)}
+    .modal-photo .photo-placeholder span{font-size:2rem}
+    .modal-photo .photo-placeholder p{font-size:.8rem;color:var(--muted)}
+    .modal-photo-label{padding:8px 10px;font-size:.85rem;font-weight:700;color:#0b1220;background:var(--white)}
+
+    /* فيديو في المودال */
+    .modal-videos-list{display:flex;flex-direction:column;gap:20px}
+    .modal-video-item{border-radius:14px;overflow:hidden;background:var(--light);border:1px solid #e2e8f0}
+    .modal-video-item .video-frame{width:100%;aspect-ratio:16/9;border:none}
+    .modal-video-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#1e3a5f,#173056);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white);gap:12px}
+    .modal-video-placeholder span{font-size:3rem;opacity:.6}
+    .modal-video-placeholder p{font-size:.9rem;opacity:.5}
+    .modal-video-label{padding:14px 16px}
+    .modal-video-label h4{font-size:1rem;font-weight:800;color:#0b1220;margin-bottom:2px}
+    .modal-video-label p{font-size:.85rem;color:var(--muted)}
+
+    /* عرض صورة منفردة */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:2000;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;border-radius:12px;object-fit:contain}
+    .lightbox-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.1);border:none;color:#fff;font-size:2rem;cursor:pointer;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+
     /* RESPONSIVE */
     @media(max-width:768px){
       .about-grid{grid-template-columns:1fr}
       .about-stats{grid-template-columns:1fr 1fr}
       .hero-btns{flex-direction:column;align-items:center}
-      .btn{width:100%;max-width:280px;justify-content:center}
+      .btn{width:100%;max-width:300px;justify-content:center}
+      .hero-logo{width:160px;height:160px}
     }
   </style>
 </head>
@@ -99,14 +143,13 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-logo">
-    <img src="logo.jpg" alt="BnD Déco Logo"/>
+    <img src="logo.png" alt="BnD Déco Logo"/>
   </div>
-  <h1>Besseghir Abdel Aziz</h1>
   <p class="hero-sub">Plaquiste · Faux Plafonds · Finitions Intérieures</p>
   <p class="hero-loc">📍 Relizane, Algérie</p>
   <div class="hero-btns">
-    <a href="#اعمال" class="btn btn-white">🖼️ Voir mes réalisations</a>
-    <a href="#فيديو" class="btn btn-outline">🎬 Vidéos des chantiers</a>
+    <button class="btn btn-white" onclick="openModal('modalPhotos')">🖼️ Voir mes réalisations</button>
+    <button class="btn btn-outline" onclick="openModal('modalVideos')">🎬 Vidéos des chantiers</button>
   </div>
   <div class="scroll-hint">تمرير للأسفل</div>
 </section>
@@ -141,7 +184,7 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY SECTION -->
 <section class="gallery-section" id="اعمال">
   <div class="container">
     <div class="section-title">
@@ -150,52 +193,43 @@
       <div class="line"></div>
     </div>
     <div class="gallery-grid">
-
-      <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🏠</span><p>صورة قريباً</p></div>
+      <div class="gallery-card" onclick="openModal('modalPhotos')">
+        <div class="gallery-img-placeholder"><span>🏠</span><p>اضغط لعرض الصور</p></div>
         <div class="gallery-info">
           <h3>Faux plafond décoratif avec spots LED</h3>
           <h4>سقف معلق ديكوري مع إضاءة LED</h4>
-          <p>Réalisation complète avec éclairage encastré LED — salon résidentiel.</p>
-          <div class="gallery-tags"><span class="gtag">Faux plafond</span><span class="gtag">LED</span><span class="gtag">سقف معلق</span></div>
+          <div class="gallery-tags"><span class="gtag">Faux plafond</span><span class="gtag">LED</span></div>
         </div>
       </div>
-
-      <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🧱</span><p>صورة قريباً</p></div>
+      <div class="gallery-card" onclick="openModal('modalPhotos')">
+        <div class="gallery-img-placeholder"><span>🧱</span><p>اضغط لعرض الصور</p></div>
         <div class="gallery-info">
           <h3>Cloison sèche avec isolation phonique</h3>
           <h4>كاليسون جافة مع عزل صوتي</h4>
-          <p>Pose de cloisons BA13 avec laine de verre pour isolation phonique.</p>
-          <div class="gallery-tags"><span class="gtag">Cloison BA13</span><span class="gtag">Isolation</span><span class="gtag">عزل صوتي</span></div>
+          <div class="gallery-tags"><span class="gtag">Cloison BA13</span><span class="gtag">Isolation</span></div>
         </div>
       </div>
-
-      <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🎨</span><p>صورة قريباً</p></div>
+      <div class="gallery-card" onclick="openModal('modalPhotos')">
+        <div class="gallery-img-placeholder"><span>🎨</span><p>اضغط لعرض الصور</p></div>
         <div class="gallery-info">
           <h3>Finitions intérieures — enduit lissé</h3>
           <h4>تشطيبات داخلية — لصاق ملساء</h4>
-          <p>Préparation et lissage complet des murs avant peinture.</p>
-          <div class="gallery-tags"><span class="gtag">Enduit</span><span class="gtag">Finitions</span><span class="gtag">تشطيب</span></div>
+          <div class="gallery-tags"><span class="gtag">Enduit</span><span class="gtag">Finitions</span></div>
         </div>
       </div>
-
-      <div class="gallery-card">
-        <div class="gallery-img-placeholder"><span>🪟</span><p>صورة قريباً</p></div>
+      <div class="gallery-card" onclick="openModal('modalPhotos')">
+        <div class="gallery-img-placeholder"><span>🪟</span><p>اضغط لعرض الصور</p></div>
         <div class="gallery-info">
           <h3>Caisson cache-rideau sur mesure</h3>
           <h4>كاليسون ستارة على مقاس</h4>
-          <p>Fabrication et installation avec éclairage indirect intégré.</p>
-          <div class="gallery-tags"><span class="gtag">Sur mesure</span><span class="gtag">Éclairage</span><span class="gtag">على مقاس</span></div>
+          <div class="gallery-tags"><span class="gtag">Sur mesure</span><span class="gtag">Éclairage</span></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- VIDEOS -->
+<!-- VIDEOS SECTION -->
 <section class="videos-section" id="فيديو">
   <div class="container">
     <div class="section-title">
@@ -204,23 +238,20 @@
       <div class="line"></div>
     </div>
     <div class="videos-grid">
-
-      <div class="video-card">
-        <div class="video-placeholder"><span>▶️</span><p>فيديو قريباً</p></div>
+      <div class="video-card" onclick="openModal('modalVideos')">
+        <div class="video-placeholder"><span>▶️</span><p>اضغط لمشاهدة الفيديوهات</p></div>
         <div class="gallery-info">
           <h3>Pose de faux plafond — en direct</h3>
           <h4>تركيب سقف معلق — مباشرة من الورشة</h4>
         </div>
       </div>
-
-      <div class="video-card">
-        <div class="video-placeholder"><span>▶️</span><p>فيديو قريباً</p></div>
+      <div class="video-card" onclick="openModal('modalVideos')">
+        <div class="video-placeholder"><span>▶️</span><p>اضغط لمشاهدة الفيديوهات</p></div>
         <div class="gallery-info">
           <h3>Avant / Après — Rénovation complète</h3>
           <h4>قبل وبعد — تحويل كامل للغرفة</h4>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -238,11 +269,128 @@
 </section>
 
 <footer>
-  © <span id="yr"></span> BnD Déco — Besseghir Abdel Aziz · Relizane, Algérie
+  © <span id="yr"></span> BnD Déco · Relizane, Algérie
 </footer>
+
+<!-- ====== MODAL الصور ====== -->
+<div class="modal-overlay" id="modalPhotos">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>🖼️ Mes réalisations — أعمالي</h3>
+      <button class="modal-close" onclick="closeModal('modalPhotos')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-photos-grid">
+
+        <!-- ======================================== -->
+        <!-- كيفية إضافة صورة حقيقية:                -->
+        <!-- 1. ارفع الصورة في المستودع              -->
+        <!-- 2. غير photo-placeholder بـ:             -->
+        <!--    <img src="اسم-الصورة.jpg" alt="وصف"> -->
+        <!-- ======================================== -->
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>🏠</span><p>صورة 1</p></div>
+          <!-- للصورة الحقيقية: <img src="work-01.jpg" alt="Faux plafond"> -->
+          <div class="modal-photo-label">Faux plafond — salon</div>
+        </div>
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>🧱</span><p>صورة 2</p></div>
+          <!-- <img src="work-02.jpg" alt="Cloison"> -->
+          <div class="modal-photo-label">Cloison BA13</div>
+        </div>
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>🎨</span><p>صورة 3</p></div>
+          <!-- <img src="work-03.jpg" alt="Enduit"> -->
+          <div class="modal-photo-label">Enduit lissé</div>
+        </div>
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>🪟</span><p>صورة 4</p></div>
+          <!-- <img src="work-04.jpg" alt="Caisson"> -->
+          <div class="modal-photo-label">Caisson cache-rideau</div>
+        </div>
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>💡</span><p>صورة 5</p></div>
+          <!-- <img src="work-05.jpg" alt="LED"> -->
+          <div class="modal-photo-label">Éclairage LED</div>
+        </div>
+
+        <div class="modal-photo" onclick="openLightbox(this)">
+          <div class="photo-placeholder"><span>🏗️</span><p>صورة 6</p></div>
+          <!-- <img src="work-06.jpg" alt="Chantier"> -->
+          <div class="modal-photo-label">Chantier en cours</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MODAL الفيديوهات ====== -->
+<div class="modal-overlay" id="modalVideos">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>🎬 Vidéos des chantiers — فيديوهات الأشغال</h3>
+      <button class="modal-close" onclick="closeModal('modalVideos')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-videos-list">
+
+        <!-- ======================================== -->
+        <!-- كيفية إضافة فيديو:                      -->
+        <!-- خيار 1 - فيديو يوتيوب:                  -->
+        <!--   <iframe class="video-frame"            -->
+        <!--     src="https://www.youtube.com/embed/VIDEO_ID" -->
+        <!--     allowfullscreen></iframe>            -->
+        <!-- خيار 2 - فيديو مباشر من المستودع:       -->
+        <!--   <video controls class="video-frame">   -->
+        <!--     <source src="video-01.mp4">          -->
+        <!--   </video>                               -->
+        <!-- ======================================== -->
+
+        <div class="modal-video-item">
+          <div class="modal-video-placeholder">
+            <span>▶️</span>
+            <p>أضف فيديو من يوتيوب أو ارفعه مباشرة</p>
+          </div>
+          <!-- مثال يوتيوب: -->
+          <!-- <iframe class="video-frame" src="https://www.youtube.com/embed/YOUR_ID" allowfullscreen></iframe> -->
+          <div class="modal-video-label">
+            <h4>Pose de faux plafond</h4>
+            <p>تركيب سقف معلق ديكوري</p>
+          </div>
+        </div>
+
+        <div class="modal-video-item">
+          <div class="modal-video-placeholder">
+            <span>▶️</span>
+            <p>أضف فيديو من يوتيوب أو ارفعه مباشرة</p>
+          </div>
+          <div class="modal-video-label">
+            <h4>Avant / Après — Rénovation</h4>
+            <p>قبل وبعد — تحويل كامل</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX لعرض صورة منفردة -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       e.preventDefault();
@@ -250,6 +398,42 @@
       if(t) t.scrollIntoView({behavior:'smooth'});
     });
   });
+
+  // Modal
+  function openModal(id){
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(id){
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow='';
+  }
+  // إغلاق بالنقر خارج المودال
+  document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+    overlay.addEventListener('click',function(e){
+      if(e.target===this) closeModal(this.id);
+    });
+  });
+  // إغلاق بـ Escape
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      document.querySelectorAll('.modal-overlay.active').forEach(m=>closeModal(m.id));
+      closeLightbox();
+    }
+  });
+
+  // Lightbox
+  function openLightbox(card){
+    const img = card.querySelector('img');
+    if(!img) return; // لا تفتح إذا لا توجد صورة حقيقية
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow='';
+  }
 </script>
 </body>
 </html>
