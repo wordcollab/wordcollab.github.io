@@ -1,152 +1,243 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abdel Aziz Besseghir — Plaquiste</title>
-  <meta name="description" content="Plaquiste — Faux Plafonds — Finitions Intérieures — Relizane, Algérie" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Abdel Aziz Besseghir — Plaquiste & Décoration Intérieure</title>
+  <meta name="description" content="Plaquiste qualifié — Faux Plafonds, Cloisons, Finitions — Relizane, Algérie"/>
   <style>
-    :root{--primary:#173056;--white:#ffffff;--muted:#6b7280;--bg:#f7f9fb;--card:#ffffff;--radius:12px;--maxw:980px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#e9eef4);color:#0b1220}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:64px;height:64px;border-radius:12px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(23,48,86,.12)}
-    h1{margin:0;font-size:1.5rem;color:var(--primary)}
-    .subtitle{margin:4px 0 0;color:var(--muted);font-size:.95rem}
-    .contact-btn a{display:inline-block;padding:10px 18px;background:var(--primary);color:var(--white);border-radius:10px;text-decoration:none;font-weight:600}
-    main{margin-top:22px;display:grid;grid-template-columns:1fr 300px;gap:22px}
-    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 8px 30px rgba(15,23,42,.06);border:1px solid rgba(7,12,20,.04)}
-    h2{margin:0 0 10px;font-size:1.1rem;color:var(--primary)}
-    .about p{margin:0;color:#111827;line-height:1.7}
-    .meta{margin-top:14px;color:var(--muted);font-size:.95rem;line-height:2}
-    .meta a{color:var(--primary)}
-    .projects{display:grid;gap:12px;margin-top:14px}
-    .project{padding:14px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0}
-    .project h3{margin:0 0 6px;font-size:.98rem;color:#0b1220}
-    .project p{margin:0;color:var(--muted);font-size:.92rem}
-    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-    .tag{background:#e0e7ff;color:#3730a3;padding:3px 10px;border-radius:999px;font-size:.82rem;font-weight:500}
-    .side h3{margin:0 0 10px;font-size:1rem;color:var(--primary)}
-    .info-list{display:flex;flex-direction:column;gap:10px}
-    .info-item{display:flex;gap:10px;align-items:flex-start}
-    .chip{background:#f1f5f9;padding:5px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#475569;white-space:nowrap}
-    .info-item div{color:#111827;font-size:.92rem;padding-top:4px}
-    .color-box{height:48px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;margin-top:8px}
-    .skills-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .skill{background:#f0fdf4;color:#166534;padding:5px 12px;border-radius:8px;font-size:.88rem;font-weight:500;border:1px solid #bbf7d0}
-    footer{text-align:center;margin-top:32px;color:var(--muted);font-size:.88rem;padding-bottom:20px}
-    @media(max-width:860px){main{grid-template-columns:1fr}}
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#173056;--blue2:#1e3d6e;--white:#fff;--light:#f7f9fb;--muted:#64748b;--green:#25d366}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:var(--light);color:#0b1220}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 60%,#2a5298 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hero-logo{width:90px;height:90px;border-radius:20px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:var(--white);margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;color:var(--white);margin-bottom:8px;letter-spacing:-0.5px}
+    .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(255,255,255,0.75);margin-bottom:6px}
+    .hero-loc{font-size:.95rem;color:rgba(255,255,255,0.5);margin-bottom:40px}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:1rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+    .btn-white{background:var(--white);color:var(--blue)}
+    .btn-outline{background:rgba(255,255,255,0.1);color:var(--white);border:2px solid rgba(255,255,255,0.3);backdrop-filter:blur(8px)}
+    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:.85rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite}
+    .scroll-hint::after{content:'↓';font-size:1.2rem}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+    /* ── SECTIONS ── */
+    section{padding:70px 20px}
+    .container{max-width:1100px;margin:0 auto}
+    .section-title{text-align:center;margin-bottom:48px}
+    .section-title h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--blue);margin-bottom:8px}
+    .section-title p{color:var(--muted);font-size:1rem}
+    .section-title .line{width:60px;height:4px;background:var(--blue);border-radius:2px;margin:12px auto 0}
+
+    /* ── ABOUT ── */
+    .about-section{background:var(--white)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about-text p{color:#374151;line-height:1.8;font-size:1rem;margin-bottom:16px}
+    .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .about-tag{background:#eff6ff;color:var(--blue);padding:6px 14px;border-radius:999px;font-size:.88rem;font-weight:500;border:1px solid #bfdbfe}
+    .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stat-card{background:var(--light);border-radius:16px;padding:24px;text-align:center;border:1px solid #e2e8f0}
+    .stat-card .num{font-size:2.2rem;font-weight:800;color:var(--blue)}
+    .stat-card .label{color:var(--muted);font-size:.9rem;margin-top:4px}
+
+    /* ── GALLERY ── */
+    .gallery-section{background:var(--light)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+    .gallery-card{border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
+    .gallery-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(23,48,86,0.15)}
+    .gallery-img{width:100%;height:220px;object-fit:cover;display:block;background:linear-gradient(135deg,#e2e8f0,#cbd5e1)}
+    .gallery-img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--blue);gap:8px}
+    .gallery-img-placeholder span{font-size:2.5rem}
+    .gallery-img-placeholder p{font-size:.85rem;color:var(--muted)}
+    .gallery-info{padding:16px}
+    .gallery-info h3{font-size:1rem;font-weight:700;color:#0b1220;margin-bottom:6px}
+    .gallery-info p{font-size:.88rem;color:var(--muted);line-height:1.5}
+    .gallery-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .gtag{background:#eff6ff;color:var(--blue);padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:500}
+
+    /* ── VIDEOS ── */
+    .videos-section{background:var(--white)}
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+    .video-card{border-radius:16px;overflow:hidden;background:var(--light);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+    .video-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#1e3a5f,#173056);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white);gap:10px}
+    .video-placeholder span{font-size:3rem;opacity:.6}
+    .video-placeholder p{font-size:.9rem;opacity:.5}
+    .video-card .gallery-info{background:var(--white)}
+
+    /* ── CONTACT ── */
+    .contact-section{background:linear-gradient(135deg,var(--blue),var(--blue2));text-align:center;padding:80px 20px}
+    .contact-section h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--white);margin-bottom:12px}
+    .contact-section p{color:rgba(255,255,255,0.7);font-size:1rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+    .contact-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn-whatsapp{background:var(--green);color:var(--white);font-size:1.05rem;padding:16px 32px;border-radius:14px}
+    .btn-phone{background:rgba(255,255,255,0.12);color:var(--white);border:2px solid rgba(255,255,255,0.25);font-size:1.05rem;padding:16px 32px;border-radius:14px}
+
+    /* ── FOOTER ── */
+    footer{background:#0b1220;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:.88rem}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      .about-grid{grid-template-columns:1fr}
+      .hero-btns{flex-direction:column;align-items:center}
+      .btn{width:100%;max-width:280px;justify-content:center}
+    }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand">
-      <div class="logo">A</div>
-      <div>
-        <h1>Abdel Aziz Besseghir</h1>
-        <p class="subtitle">Plaquiste · Faux Plafonds · Finitions Intérieures — Relizane, Algérie</p>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-logo">A</div>
+  <h1>Abdel Aziz Besseghir</h1>
+  <p class="hero-sub">Plaquiste · Faux Plafonds · Finitions Intérieures</p>
+  <p class="hero-loc">📍 Relizane, Algérie</p>
+  <div class="hero-btns">
+    <a href="#galerie" class="btn btn-white">🖼️ Voir mes réalisations</a>
+    <a href="#videos" class="btn btn-outline">🎬 Voir les vidéos</a>
+  </div>
+  <div class="scroll-hint">Défiler</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Qui suis-je ?</h2>
+      <div class="line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Plaquiste qualifié avec plus de <strong>4 ans d'expérience</strong> en pose de faux plafonds décoratifs, cloisons sèches, joints, enduit lissé et finitions intérieures.</p>
+        <p>Intervenant sur des chantiers résidentiels et commerciaux à Relizane et ses environs. Titulaire d'un <strong>certificat professionnel</strong> en Décoration d'intérieur — Dar El Hiraf, Relizane 2022.</p>
+        <div class="about-tags">
+          <span class="about-tag">Faux plafonds décoratifs</span>
+          <span class="about-tag">Cloisons sèches BA13</span>
+          <span class="about-tag">Isolation phonique</span>
+          <span class="about-tag">Joints & enduit lissé</span>
+          <span class="about-tag">Caissons cache-rideau</span>
+          <span class="about-tag">Spots LED encastrés</span>
+          <span class="about-tag">Préparation avant peinture</span>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="num">+4</div><div class="label">Ans d'expérience</div></div>
+        <div class="stat-card"><div class="num">+50</div><div class="label">Chantiers réalisés</div></div>
+        <div class="stat-card"><div class="num">100%</div><div class="label">Qualité garantie</div></div>
+        <div class="stat-card"><div class="num">2022</div><div class="label">Certifié Dar El Hiraf</div></div>
       </div>
     </div>
-    <div class="contact-btn">
-      <a href="mailto:decoration0048@gmail.com">Contactez-moi</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="galerie">
+  <div class="container">
+    <div class="section-title">
+      <h2>Mes Réalisations</h2>
+      <p>Quelques exemples de mes travaux récents</p>
+      <div class="line"></div>
     </div>
-  </header>
+    <div class="gallery-grid">
 
-  <main>
-    <div>
-      <div class="card about">
-        <h2>À propos</h2>
-        <p>Plaquiste qualifié avec plus de 4 ans d'expérience en pose de faux plafonds décoratifs, cloisons sèches, joints, enduit lissé et finitions intérieures. Chantiers résidentiels et commerciaux à Relizane et environs. Titulaire d'un certificat professionnel en Décoration d'intérieur — Dar El Hiraf, Relizane 2022.</p>
-        <div class="meta">
-          <strong>📍 Localisation:</strong> Relizane, Algérie<br>
-          <strong>📧 Email:</strong> <a href="mailto:decoration0048@gmail.com">decoration0048@gmail.com</a>
+      <div class="gallery-card">
+        <div class="gallery-img-placeholder"><span>🏠</span><p>Photo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Faux plafond décoratif avec spots LED</h3>
+          <p>Réalisation complète avec éclairage encastré LED — salon résidentiel.</p>
+          <div class="gallery-tags"><span class="gtag">Faux plafond</span><span class="gtag">Spots LED</span></div>
         </div>
       </div>
 
-      <div class="card" style="margin-top:16px">
-        <h2>Compétences</h2>
-        <div class="skills-grid">
-          <span class="skill">Faux plafonds décoratifs</span>
-          <span class="skill">Cloisons sèches BA13</span>
-          <span class="skill">Isolation phonique</span>
-          <span class="skill">Joints & enduit lissé</span>
-          <span class="skill">Caissons cache-rideau</span>
-          <span class="skill">Spots LED encastrés</span>
-          <span class="skill">Préparation avant peinture</span>
-          <span class="skill">Lecture de plans</span>
+      <div class="gallery-card">
+        <div class="gallery-img-placeholder"><span>🧱</span><p>Photo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Cloison sèche avec isolation phonique</h3>
+          <p>Pose de cloisons BA13 avec laine de verre pour isolation phonique.</p>
+          <div class="gallery-tags"><span class="gtag">Cloison BA13</span><span class="gtag">Isolation</span></div>
         </div>
       </div>
 
-      <div class="card" style="margin-top:16px">
-        <h2>Réalisations récentes</h2>
-        <div class="projects">
-          <div class="project">
-            <h3>Faux plafond décoratif avec spots LED</h3>
-            <p>Réalisation complète avec éclairage encastré LED dans un salon résidentiel. Finition lisse haute qualité.</p>
-            <div class="tags"><span class="tag">Faux plafond</span><span class="tag">Spots LED</span><span class="tag">Résidentiel</span></div>
-          </div>
-          <div class="project">
-            <h3>Cloison sèche avec isolation phonique</h3>
-            <p>Pose de cloisons BA13 avec laine de verre pour isolation phonique dans un appartement.</p>
-            <div class="tags"><span class="tag">Cloison BA13</span><span class="tag">Isolation</span></div>
-          </div>
-          <div class="project">
-            <h3>Finitions intérieures — enduit lissé</h3>
-            <p>Préparation et lissage complet des murs avant peinture. Correction des irrégularités et finition impeccable.</p>
-            <div class="tags"><span class="tag">Enduit</span><span class="tag">Lissage</span><span class="tag">Finitions</span></div>
-          </div>
-          <div class="project">
-            <h3>Caisson cache-rideau sur mesure</h3>
-            <p>Fabrication et installation d'un caisson cache-rideau en plâtre sur mesure avec éclairage indirect.</p>
-            <div class="tags"><span class="tag">Sur mesure</span><span class="tag">Éclairage indirect</span></div>
-          </div>
+      <div class="gallery-card">
+        <div class="gallery-img-placeholder"><span>🎨</span><p>Photo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Finitions intérieures — enduit lissé</h3>
+          <p>Préparation et lissage complet des murs avant peinture.</p>
+          <div class="gallery-tags"><span class="gtag">Enduit</span><span class="gtag">Lissage</span></div>
         </div>
       </div>
+
+      <div class="gallery-card">
+        <div class="gallery-img-placeholder"><span>🪟</span><p>Photo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Caisson cache-rideau sur mesure</h3>
+          <p>Fabrication et installation avec éclairage indirect intégré.</p>
+          <div class="gallery-tags"><span class="gtag">Sur mesure</span><span class="gtag">Éclairage indirect</span></div>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <aside>
-      <div class="card side">
-        <h3>Infos rapides</h3>
-        <div class="info-list">
-          <div class="info-item"><span class="chip">Métier</span><div>Plaquiste</div></div>
-          <div class="info-item"><span class="chip">Zone</span><div>Relizane, Algérie</div></div>
-          <div class="info-item"><span class="chip">Exp.</span><div>+4 ans</div></div>
-          <div class="info-item"><span class="chip">Email</span><div><a href="mailto:decoration0048@gmail.com" style="color:#173056">decoration0048@gmail.com</a></div></div>
-        </div>
-        <div class="color-box">#173056</div>
-      </div>
+<!-- VIDEOS -->
+<section class="videos-section" id="videos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Vidéos de chantier</h2>
+      <p>Suivez mes travaux en vidéo</p>
+      <div class="line"></div>
+    </div>
+    <div class="videos-grid">
 
-      <div class="card" style="margin-top:16px">
-        <h3>Expérience</h3>
-        <div style="font-size:.92rem;color:#374151;line-height:1.7">
-          <strong style="color:#173056">Plaquiste Indépendant</strong><br>
-          Jan 2023 – Mars 2026<br>
-          <span style="color:var(--muted)">+50 chantiers résidentiels & commerciaux</span>
-          <hr style="border:none;border-top:1px solid #e2e8f0;margin:10px 0">
-          <strong style="color:#173056">Plaquiste · Finitions</strong><br>
-          Jan 2022 – Déc 2022<br>
-          <span style="color:var(--muted)">Chantiers de rénovation, Relizane</span>
+      <div class="video-card">
+        <div class="video-placeholder"><span>▶️</span><p>Vidéo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Pose de faux plafond en direct</h3>
+          <p>Timelapse d'une installation complète de faux plafond.</p>
         </div>
       </div>
 
-      <div class="card" style="margin-top:16px">
-        <h3>Formation</h3>
-        <div style="font-size:.92rem;color:#374151;line-height:1.7">
-          <strong style="color:#173056">Certificat Professionnel</strong><br>
-          Plaquiste Décorateur Intérieur<br>
-          <span style="color:var(--muted)">Dar El Hiraf, Relizane — 2022</span><br>
-          <span style="color:var(--muted);font-size:.85rem">Code ROME: F1604 | NAF: 4331Z</span>
+      <div class="video-card">
+        <div class="video-placeholder"><span>▶️</span><p>Vidéo à venir</p></div>
+        <div class="gallery-info">
+          <h3>Avant / Après — Rénovation complète</h3>
+          <p>Transformation d'une pièce de A à Z.</p>
         </div>
       </div>
-    </aside>
-  </main>
 
-  <footer>
-    © <span id="yr"></span> Abdel Aziz Besseghir — Plaquiste · Relizane, Algérie
-  </footer>
-</div>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2>Demandez un devis gratuit</h2>
+    <p>Contactez-moi pour discuter de votre projet. Je vous réponds rapidement.</p>
+    <div class="contact-btns">
+      <a href="https://wa.me/213672253570" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+      <a href="tel:+213672253570" class="btn btn-phone">📞 +213 672 25 35 70</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Abdel Aziz Besseghir — Plaquiste · Relizane, Algérie
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
 </body>
 </html>
