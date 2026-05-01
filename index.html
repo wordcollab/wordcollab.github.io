@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="BnD Déco — Plaquiste à Relizane. Faux plafonds, cloisons, habillage de murs, LED, matériaux décoratifs et contact direct."
+    content="BnD Déco — حرفي جبس وديكور داخلي في رليزان. أسقف جبسية، قواطع، تغليف جدران، LED ومواد ديكورية."
   />
-  <title>BnD Déco | Plaquiste Relizane</title>
+  <title>BnD Déco | جبس وديكور رليزان</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,29 +22,35 @@
   <header class="site-header" id="top">
     <div class="container header-wrapper">
       <a href="#top" class="brand" aria-label="BnD Déco Home">
-       <img src="logo.png" alt="BnD Déco Logo" class="brand-logo" />
+        <img src="logo.png" alt="BnD Déco Logo" class="brand-logo" />
         <span class="brand-text">BnD Déco</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="site-nav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <button
+          class="lang-toggle"
+          id="langToggle"
+          type="button"
+          aria-label="Change language"
+        >
+          <span class="lang-icon">🌐</span>
+          <span>FR</span>
+        </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#accueil">Accueil</a>
-        <a href="#travaux">Notre Travail</a>
-        <a href="#materiaux">Matériaux</a>
-        <a href="#contact">Contact</a>
-      <a href="#" id="headerWhatsappBtn" class="nav-whatsapp">WhatsApp</a>
-      </nav>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation"></nav>
     </div>
   </header>
 
@@ -52,25 +58,21 @@
     <section class="hero-section" id="accueil">
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="hero-kicker" id="heroKicker">Plaquiste · Faux plafonds · Cloisons</p>
-          <h1 id="heroTitle">BnD Déco</h1>
-          <p class="hero-text" id="heroText">
-            Travaux de placo-plâtre, habillage mural, LED intégré et solutions décoratives modernes.
-          </p>
-          <p class="hero-location" id="heroLocation">Relizane, Algérie</p>
+          <p class="hero-kicker" id="heroKicker"></p>
+          <h1 id="heroTitle"></h1>
+          <p class="hero-text" id="heroText"></p>
+          <p class="hero-location" id="heroLocation"></p>
 
           <div class="hero-actions">
-            <a href="#travaux" class="btn btn-primary">Voir notre travail</a>
-            <a href="#contact" class="btn btn-secondary">Demander un devis</a>
+            <a href="#travaux" class="btn btn-primary" id="heroPrimaryBtn"></a>
+            <a href="#contact" class="btn btn-secondary" id="heroSecondaryBtn"></a>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="hero-card-inner">
-            <h2>Présentation</h2>
-            <p id="heroCardText">
-              Site vitrine professionnel pour présenter les travaux, les matériaux utilisés et les moyens de contact.
-            </p>
+            <h2 id="heroCardTitle"></h2>
+            <p id="heroCardText"></p>
           </div>
         </div>
       </div>
@@ -79,11 +81,9 @@
     <section class="section travaux-section" id="travaux">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Notre Travail</p>
-          <h2>Travaux et réalisations</h2>
-          <p>
-            Les éléments visuels seront ajoutés plus tard. Cette zone affichera les cartes, les filtres et l’ouverture en modal avec carousel.
-          </p>
+          <p class="section-kicker"></p>
+          <h2></h2>
+          <p></p>
         </div>
 
         <div class="filters" id="travauxFilters"></div>
@@ -94,11 +94,9 @@
     <section class="section materiaux-section" id="materiaux">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Matériaux</p>
-          <h2>Produits et finitions</h2>
-          <p>
-            Cette section affichera plus tard les matériaux et produits décoratifs utilisés dans vos travaux.
-          </p>
+          <p class="section-kicker"></p>
+          <h2></h2>
+          <p></p>
         </div>
 
         <div class="materiaux-grid" id="materiauxGrid"></div>
@@ -108,11 +106,9 @@
     <section class="section contact-section" id="contact">
       <div class="container">
         <div class="section-head section-head-light">
-          <p class="section-kicker">Contact</p>
-          <h2>Parlons de votre besoin</h2>
-          <p>
-            Les coordonnées finales seront chargées depuis un fichier séparé pour faciliter toute modification plus tard.
-          </p>
+          <p class="section-kicker"></p>
+          <h2></h2>
+          <p></p>
         </div>
 
         <div class="contact-cards" id="contactCards"></div>
@@ -124,7 +120,7 @@
     <div class="container footer-wrapper">
       <div>
         <h3>BnD Déco</h3>
-        <p id="footerText">Plaquiste · Décoration intérieure · Relizane</p>
+        <p id="footerText"></p>
       </div>
 
       <div class="footer-links" id="footerLinks"></div>
@@ -140,15 +136,15 @@
       </button>
 
       <div class="media-modal-header">
-        <h3 id="mediaModalTitle">Aperçu</h3>
+        <h3 id="mediaModalTitle"></h3>
         <p id="mediaModalMeta"></p>
       </div>
 
       <div class="media-modal-viewer" id="mediaModalViewer"></div>
 
       <div class="media-modal-controls">
-        <button type="button" id="prevSlideBtn">Précédent</button>
-        <button type="button" id="nextSlideBtn">Suivant</button>
+        <button type="button" id="prevSlideBtn"></button>
+        <button type="button" id="nextSlideBtn"></button>
       </div>
     </div>
   </div>
