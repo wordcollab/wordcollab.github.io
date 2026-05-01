@@ -1,11 +1,4 @@
 window.siteInfo = {
-  business: {
-    name: "BnD Déco",
-    activity: "Plaquiste · Décoration intérieure",
-    city: "Relizane",
-    country: "Algérie"
-  },
-
   contact: {
     phoneDisplay: "0672 25 35 70",
     phoneRaw: "213672253570",
@@ -22,54 +15,105 @@ window.siteInfo = {
 
   contactCards: [
     {
-      title: "WhatsApp",
-      text: "Contact direct pour devis, questions et prise de rendez-vous.",
+      title: {
+        ar: "واتساب",
+        fr: "WhatsApp"
+      },
+      text: {
+        ar: "تواصل مباشر من أجل عرض سعر، استفسار أو حجز موعد.",
+        fr: "Contact direct pour devis, questions et prise de rendez-vous."
+      },
       value: "0672 25 35 70",
       link: "https://wa.me/213672253570",
-      linkLabel: "Ouvrir WhatsApp"
+      linkLabel: {
+        ar: "فتح واتساب",
+        fr: "Ouvrir WhatsApp"
+      }
     },
     {
-      title: "Téléphone",
-      text: "Appelez directement pour parler de votre besoin.",
+      title: {
+        ar: "الهاتف",
+        fr: "Téléphone"
+      },
+      text: {
+        ar: "اتصل مباشرة لشرح احتياجك أو نوع الأشغال المطلوبة.",
+        fr: "Appelez directement pour parler de votre besoin."
+      },
       value: "0672 25 35 70",
       link: "tel:+213672253570",
-      linkLabel: "Appeler maintenant"
+      linkLabel: {
+        ar: "اتصل الآن",
+        fr: "Appeler maintenant"
+      }
     },
     {
-      title: "Email",
-      text: "Envoyez vos photos, demandes ou détails du chantier.",
+      title: {
+        ar: "البريد الإلكتروني",
+        fr: "Email"
+      },
+      text: {
+        ar: "أرسل الصور أو تفاصيل الورشة أو طلبك عبر البريد.",
+        fr: "Envoyez vos photos, demandes ou détails du chantier."
+      },
       value: "decoration0048@gmail.com",
       link: "mailto:decoration0048@gmail.com",
-      linkLabel: "Envoyer un email"
+      linkLabel: {
+        ar: "إرسال بريد",
+        fr: "Envoyer un email"
+      }
     },
     {
-      title: "Localisation",
-      text: "Zone principale d’intervention.",
+      title: {
+        ar: "الموقع",
+        fr: "Localisation"
+      },
+      text: {
+        ar: "منطقة التدخل الرئيسية للأعمال والخدمة.",
+        fr: "Zone principale d’intervention."
+      },
       value: "Relizane, Algérie",
       link: "#contact",
-      linkLabel: "Voir la section contact"
+      linkLabel: {
+        ar: "عرض قسم التواصل",
+        fr: "Voir la section contact"
+      }
     }
   ],
 
   footerLinks: [
     {
-      label: "WhatsApp",
+      label: {
+        ar: "واتساب",
+        fr: "WhatsApp"
+      },
       url: "https://wa.me/213672253570"
     },
     {
-      label: "Email",
+      label: {
+        ar: "البريد",
+        fr: "Email"
+      },
       url: "mailto:decoration0048@gmail.com"
     },
     {
-      label: "Facebook",
+      label: {
+        ar: "فيسبوك",
+        fr: "Facebook"
+      },
       url: "#"
     },
     {
-      label: "Instagram",
+      label: {
+        ar: "إنستغرام",
+        fr: "Instagram"
+      },
       url: "#"
     },
     {
-      label: "TikTok",
+      label: {
+        ar: "تيك توك",
+        fr: "TikTok"
+      },
       url: "#"
     }
   ]
