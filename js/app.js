@@ -107,12 +107,12 @@ function renderInfo() {
 
   if (Array.isArray(info.footerLinks) && footerLinks) {
     footerLinks.innerHTML = info.footerLinks
-  .map(
-    (link) => `
-      <a href="${link.url}">${link.label}</a>
-    `
-  )
-  .join("");
+      .map(
+        (link) => `
+          <a href="${link.url}">${link.label}</a>
+        `
+      )
+      .join("");
   }
 }
 
@@ -199,4 +199,85 @@ function renderTravauxItems() {
 
   travauxGrid.querySelectorAll(".travail-card").forEach((card) => {
     card.addEventListener("click", () => {
-      const item = 
+      const item = travauxData.items.find((entry) => entry.id === card.dataset.id);
+      if (item) openPlaceholderModal(item);
+    });
+  });
+}
+
+function renderMateriaux() {
+  if (!materiauxGrid || !Array.isArray(materiauxData)) return;
+
+  materiauxGrid.innerHTML = materiauxData
+    .map(
+      (item) => `
+        <article class="materiau-card">
+          <div class="materiau-media-placeholder">
+            <div>
+              <p>Image produit plus tard</p>
+              <p>${item.title}</p>
+            </div>
+          </div>
+          <div class="materiau-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="materiau-meta">
+              ${item.tags.map((tag) => `<span class="meta-pill">${tag}</span>`).join("")}
+            </div>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function setupMenu() {
+  if (!menuToggle || !siteNav) return;
+
+  menuToggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const isOpen = siteNav.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      siteNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+function setupModal() {
+  if (!mediaModal) return;
+
+  document.querySelectorAll("[data-close-modal]").forEach((element) => {
+    element.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+}
+
+function init() {
+  renderConfig();
+  renderInfo();
+  renderTravauxFilters();
+  renderTravauxItems();
+  renderMateriaux();
+  setupMenu();
+  setupModal();
+}
+
+document.addEventListener("DOMContentLoaded", init);
