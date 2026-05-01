@@ -107,12 +107,12 @@ function renderInfo() {
 
   if (Array.isArray(info.footerLinks) && footerLinks) {
     footerLinks.innerHTML = info.footerLinks
-      .map(
-        (link) => `
-          <a href="${link.url}" target="_blank" rel="noopener">${link.label}</a>
-        `
-      )
-      .join("");
+  .map(
+    (link) => `
+      <a href="${link.url}">${link.label}</a>
+    `
+  )
+  .join("");
   }
 }
 
