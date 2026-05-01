@@ -1,158 +1,149 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BnD Déco</title>
   <meta
     name="description"
-    content="BnD Déco — حرفي جبس وديكور داخلي في رليزان. أسقف جبسية، قواطع، تغليف جدران، LED ومواد ديكورية."
+    content="BnD Déco à Relizane : faux plafonds, cloisons, finitions intérieures et travaux de décoration."
   />
-  <title>BnD Déco | جبس وديكور رليزان</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container header-wrapper">
-      <a href="#top" class="brand" aria-label="BnD Déco Home">
-        <img src="logo.png" alt="BnD Déco Logo" class="brand-logo" />
-        <span class="brand-text">BnD Déco</span>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="lang-toggle" type="button" aria-label="Changer la langue">
+        <i class="fa-solid fa-globe"></i>
+      </button>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#top">Accueil</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#produits">Produits</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#top" class="brand-logo" aria-label="BnD Déco">
+        <img src="assets/images/logo.png" alt="Logo BnD Déco" />
       </a>
-
-      <div class="header-actions">
-        <button
-          class="lang-toggle"
-          id="langToggle"
-          type="button"
-          aria-label="Change language"
-        >
-          <span class="lang-icon">🌐</span>
-          <span>FR</span>
-        </button>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="site-nav"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation"></nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero-section" id="accueil">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="hero-kicker" id="heroKicker"></p>
-          <h1 id="heroTitle"></h1>
-          <p class="hero-text" id="heroText"></p>
-          <p class="hero-location" id="heroLocation"></p>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-frame">
+          <div class="hero-content">
+            <p class="hero-kicker">Relizane, Algérie</p>
+            <h1>BnD Déco</h1>
+            <p class="hero-text">
+              Faux plafonds, cloisons et décoration intérieure avec une finition soignée.
+            </p>
 
-          <div class="hero-actions">
-            <a href="#travaux" class="btn btn-primary" id="heroPrimaryBtn"></a>
-            <a href="#contact" class="btn btn-secondary" id="heroSecondaryBtn"></a>
+            <div class="hero-actions">
+              <a href="#portfolio" class="btn btn-primary">Découvrir nos travaux</a>
+              <a
+                href="https://wa.me/213672253570"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Nous contacter
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <h2 id="heroCardTitle"></h2>
-            <p id="heroCardText"></p>
-          </div>
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Portfolio</p>
+          <h2>Nos réalisations</h2>
+          <p>
+            Une sélection de travaux en faux plafonds, cloisons, finitions et détails décoratifs.
+          </p>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+          <!-- Les cartes seront injectées depuis data/projects.js -->
         </div>
       </div>
     </section>
 
-    <section class="section travaux-section" id="travaux">
+    <section class="products-section" id="produits">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker"></p>
-          <h2></h2>
-          <p></p>
+        <div class="section-heading">
+          <p class="section-label">Produits</p>
+          <h2>Galerie produits</h2>
+          <p>
+            Les matériaux et finitions utilisés pour un rendu propre, durable et élégant.
+          </p>
         </div>
 
-        <div class="filters" id="travauxFilters"></div>
-        <div class="travaux-grid" id="travauxGrid"></div>
+        <div class="products-grid" id="productsGrid">
+          <!-- Les produits seront injectés depuis data/projects.js -->
+        </div>
       </div>
     </section>
 
-    <section class="section materiaux-section" id="materiaux">
+    <section class="contact-section" id="contact">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker"></p>
-          <h2></h2>
-          <p></p>
+        <div class="section-heading light">
+          <p class="section-label">Contact</p>
+          <h2>Parlons de votre projet</h2>
+          <p>
+            Pour une demande rapide, contactez-nous directement par téléphone ou WhatsApp.
+          </p>
         </div>
 
-        <div class="materiaux-grid" id="materiauxGrid"></div>
-      </div>
-    </section>
+        <div class="contact-actions">
+          <a
+            href="https://wa.me/213672253570"
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+          </a>
 
-    <section class="section contact-section" id="contact">
-      <div class="container">
-        <div class="section-head section-head-light">
-          <p class="section-kicker"></p>
-          <h2></h2>
-          <p></p>
+          <a href="tel:+213672253570" class="btn btn-phone">
+            <i class="fa-solid fa-phone"></i>
+            0672 25 35 70
+          </a>
         </div>
-
-        <div class="contact-cards" id="contactCards"></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-wrapper">
-      <div>
-        <h3>BnD Déco</h3>
-        <p id="footerText"></p>
+    <div class="container footer-inner">
+      <p>BnD Déco — Relizane, Algérie</p>
+      <div class="footer-links">
+        <a href="tel:+213672253570">Appeler</a>
+        <a href="https://wa.me/213672253570" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
-
-      <div class="footer-links" id="footerLinks"></div>
     </div>
   </footer>
 
-  <div class="media-modal" id="mediaModal" aria-hidden="true">
-    <div class="media-modal-overlay" data-close-modal></div>
-
-    <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle">
-      <button class="media-modal-close" type="button" aria-label="Close modal" data-close-modal>
-        ×
-      </button>
-
-      <div class="media-modal-header">
-        <h3 id="mediaModalTitle"></h3>
-        <p id="mediaModalMeta"></p>
-      </div>
-
-      <div class="media-modal-viewer" id="mediaModalViewer"></div>
-
-      <div class="media-modal-controls">
-        <button type="button" id="prevSlideBtn"></button>
-        <button type="button" id="nextSlideBtn"></button>
-      </div>
-    </div>
-  </div>
-
   <script src="data/config.js"></script>
   <script src="data/info.js"></script>
-  <script src="data/travaux.js"></script>
-  <script src="data/materiaux.js"></script>
-  <script src="js/app.js"></script>
+  <script src="data/projects.js"></script>
 </body>
 </html>
