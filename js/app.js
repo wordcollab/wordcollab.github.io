@@ -3,20 +3,28 @@ const info = window.siteInfo || {};
 const travauxData = window.travauxData || { filters: [], items: [] };
 const materiauxData = window.materiauxData || [];
 
+const defaultLanguage = config.defaultLanguage || "ar";
+let currentLanguage = localStorage.getItem("siteLanguage") || defaultLanguage;
+let currentFilter = "all";
+
 const heroKicker = document.getElementById("heroKicker");
 const heroTitle = document.getElementById("heroTitle");
 const heroText = document.getElementById("heroText");
 const heroLocation = document.getElementById("heroLocation");
+const heroCardTitle = document.getElementById("heroCardTitle");
 const heroCardText = document.getElementById("heroCardText");
+const heroPrimaryBtn = document.getElementById("heroPrimaryBtn");
+const heroSecondaryBtn = document.getElementById("heroSecondaryBtn");
+
 const footerText = document.getElementById("footerText");
 const footerLinks = document.getElementById("footerLinks");
 const contactCards = document.getElementById("contactCards");
 const travauxFilters = document.getElementById("travauxFilters");
 const travauxGrid = document.getElementById("travauxGrid");
 const materiauxGrid = document.getElementById("materiauxGrid");
-const headerWhatsappBtn = document.getElementById("headerWhatsappBtn");
 const siteNav = document.getElementById("site-nav");
 const menuToggle = document.querySelector(".menu-toggle");
+const langToggle = document.getElementById("langToggle");
 
 const travauxSection = document.getElementById("travaux");
 const materiauxSection = document.getElementById("materiaux");
@@ -26,79 +34,145 @@ const mediaModal = document.getElementById("mediaModal");
 const mediaModalViewer = document.getElementById("mediaModalViewer");
 const mediaModalTitle = document.getElementById("mediaModalTitle");
 const mediaModalMeta = document.getElementById("mediaModalMeta");
+const prevSlideBtn = document.getElementById("prevSlideBtn");
+const nextSlideBtn = document.getElementById("nextSlideBtn");
 
-let currentFilter = "all";
+function pick(value) {
+  if (
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    ("ar" in value || "fr" in value)
+  ) {
+    return value[currentLanguage] || value[defaultLanguage] || value.ar || value.fr || "";
+  }
+
+  return value;
+}
 
 function setTextContent(element, value) {
-  if (element && value) {
+  if (element && typeof value === "string") {
     element.textContent = value;
   }
 }
 
-function renderConfig() {
-  if (config.siteTitle) {
-    document.title = config.siteTitle;
-  }
+function applyLanguageSettings() {
+  const langConfig = config.languages?.[currentLanguage] || config.languages?.[defaultLanguage];
 
-  const descriptionTag = document.querySelector('meta[name="description"]');
-  if (descriptionTag && config.siteDescription) {
-    descriptionTag.setAttribute("content", config.siteDescription);
-  }
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = langConfig?.dir || "rtl";
 
-  if (config.hero) {
-    setTextContent(heroKicker, config.hero.kicker);
-    setTextContent(heroTitle, config.hero.title);
-    setTextContent(heroText, config.hero.text);
-    setTextContent(heroLocation, config.hero.location);
-    setTextContent(heroCardText, config.hero.cardText);
-  }
-
-  if (config.sections?.travaux && travauxSection) {
-    const kicker = travauxSection.querySelector(".section-kicker");
-    const title = travauxSection.querySelector("h2");
-    const text = travauxSection.querySelector(".section-head p");
-    setTextContent(kicker, config.sections.travaux.kicker);
-    setTextContent(title, config.sections.travaux.title);
-    setTextContent(text, config.sections.travaux.text);
-  }
-
-  if (config.sections?.materiaux && materiauxSection) {
-    const kicker = materiauxSection.querySelector(".section-kicker");
-    const title = materiauxSection.querySelector("h2");
-    const text = materiauxSection.querySelector(".section-head p");
-    setTextContent(kicker, config.sections.materiaux.kicker);
-    setTextContent(title, config.sections.materiaux.title);
-    setTextContent(text, config.sections.materiaux.text);
-  }
-
-  if (config.sections?.contact && contactSection) {
-    const kicker = contactSection.querySelector(".section-kicker");
-    const title = contactSection.querySelector("h2");
-    const text = contactSection.querySelector(".section-head p");
-    setTextContent(kicker, config.sections.contact.kicker);
-    setTextContent(title, config.sections.contact.title);
-    setTextContent(text, config.sections.contact.text);
-  }
-
-  if (config.footer?.text) {
-    setTextContent(footerText, config.footer.text);
+  if (langToggle) {
+    const toggleText = langConfig?.toggleLabel || (currentLanguage === "ar" ? "FR" : "AR");
+    langToggle.innerHTML = `
+      <span class="lang-icon">🌐</span>
+      <span>${toggleText}</span>
+    `;
   }
 }
 
-function renderInfo() {
-  if (headerWhatsappBtn && info.social?.whatsapp) {
-    headerWhatsappBtn.href = info.social.whatsapp;
+function renderNavigation() {
+  if (!siteNav) return;
+
+  const items = config.navigation?.[currentLanguage] || config.navigation?.[defaultLanguage] || [];
+  const whatsappLabel = pick(config.labels?.[currentLanguage]?.whatsapp) || "WhatsApp";
+  const whatsappUrl = info.social?.whatsapp || "#";
+
+  siteNav.innerHTML = `
+    ${items
+      .map(
+        (item) => `
+          <a href="${item.href}">${item.label}</a>
+        `
+      )
+      .join("")}
+    <a href="${whatsappUrl}" id="headerWhatsappBtn" class="nav-whatsapp">${whatsappLabel}</a>
+  `;
+}
+
+function renderConfig() {
+  const pageTitle = pick(config.siteTitles);
+  const pageDescription = pick(config.siteDescriptions);
+  const hero = config.hero?.[currentLanguage] || config.hero?.[defaultLanguage];
+  const travaux = config.sections?.travaux?.[currentLanguage] || config.sections?.travaux?.[defaultLanguage];
+  const materiaux = config.sections?.materiaux?.[currentLanguage] || config.sections?.materiaux?.[defaultLanguage];
+  const contact = config.sections?.contact?.[currentLanguage] || config.sections?.contact?.[defaultLanguage];
+  const footer = config.footer?.[currentLanguage] || config.footer?.[defaultLanguage];
+  const labels = config.labels?.[currentLanguage] || config.labels?.[defaultLanguage];
+
+  if (pageTitle) {
+    document.title = pageTitle;
   }
 
+  const descriptionTag = document.querySelector('meta[name="description"]');
+  if (descriptionTag && pageDescription) {
+    descriptionTag.setAttribute("content", pageDescription);
+  }
+
+  if (hero) {
+    setTextContent(heroKicker, hero.kicker);
+    setTextContent(heroTitle, hero.title);
+    setTextContent(heroText, hero.text);
+    setTextContent(heroLocation, hero.location);
+    setTextContent(heroCardTitle, hero.cardTitle);
+    setTextContent(heroCardText, hero.cardText);
+    setTextContent(heroPrimaryBtn, hero.primaryButton);
+    setTextContent(heroSecondaryBtn, hero.secondaryButton);
+  }
+
+  if (travaux && travauxSection) {
+    const kicker = travauxSection.querySelector(".section-kicker");
+    const title = travauxSection.querySelector("h2");
+    const text = travauxSection.querySelector(".section-head p:last-of-type");
+    setTextContent(kicker, travaux.kicker);
+    setTextContent(title, travaux.title);
+    setTextContent(text, travaux.text);
+  }
+
+  if (materiaux && materiauxSection) {
+    const kicker = materiauxSection.querySelector(".section-kicker");
+    const title = materiauxSection.querySelector("h2");
+    const text = materiauxSection.querySelector(".section-head p:last-of-type");
+    setTextContent(kicker, materiaux.kicker);
+    setTextContent(title, materiaux.title);
+    setTextContent(text, materiaux.text);
+  }
+
+  if (contact && contactSection) {
+    const kicker = contactSection.querySelector(".section-kicker");
+    const title = contactSection.querySelector("h2");
+    const text = contactSection.querySelector(".section-head p:last-of-type");
+    setTextContent(kicker, contact.kicker);
+    setTextContent(title, contact.title);
+    setTextContent(text, contact.text);
+  }
+
+  if (footer?.text) {
+    setTextContent(footerText, footer.text);
+  }
+
+  if (mediaModalTitle && !mediaModal.classList.contains("is-open")) {
+    setTextContent(mediaModalTitle, labels?.modalTitle || "");
+  }
+
+  if (mediaModalMeta && !mediaModal.classList.contains("is-open")) {
+    setTextContent(mediaModalMeta, labels?.modalMeta || "");
+  }
+
+  setTextContent(prevSlideBtn, labels?.prev || "");
+  setTextContent(nextSlideBtn, labels?.next || "");
+}
+
+function renderInfo() {
   if (Array.isArray(info.contactCards) && contactCards) {
     contactCards.innerHTML = info.contactCards
       .map(
         (card) => `
           <article class="contact-card">
-            <h3>${card.title}</h3>
-            <p>${card.text}</p>
+            <h3>${pick(card.title)}</h3>
+            <p>${pick(card.text)}</p>
             <p>${card.value}</p>
-            <a href="${card.link}">${card.linkLabel}</a>
+            <a href="${card.link}">${pick(card.linkLabel)}</a>
           </article>
         `
       )
@@ -109,7 +183,7 @@ function renderInfo() {
     footerLinks.innerHTML = info.footerLinks
       .map(
         (link) => `
-          <a href="${link.url}">${link.label}</a>
+          <a href="${link.url}">${pick(link.label)}</a>
         `
       )
       .join("");
@@ -127,31 +201,24 @@ function renderTravauxFilters() {
           class="filter-btn ${filter.key === currentFilter ? "active" : ""}"
           data-filter="${filter.key}"
         >
-          ${filter.label}
+          ${pick(filter.label)}
         </button>
       `
     )
     .join("");
-
-  travauxFilters.querySelectorAll(".filter-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      currentFilter = button.dataset.filter;
-      renderTravauxFilters();
-      renderTravauxItems();
-    });
-  });
 }
 
 function openPlaceholderModal(item) {
   if (!mediaModal || !mediaModalViewer || !mediaModalTitle || !mediaModalMeta) return;
 
-  mediaModalTitle.textContent = item.title;
-  mediaModalMeta.textContent = item.description;
+  const labels = config.labels?.[currentLanguage] || config.labels?.[defaultLanguage];
+  mediaModalTitle.textContent = pick(item.title);
+  mediaModalMeta.textContent = pick(item.description);
   mediaModalViewer.innerHTML = `
     <div class="travail-media-placeholder">
       <div>
-        <p>Médias à ajouter plus tard</p>
-        <p>${item.title}</p>
+        <p>${labels?.mediaLater || ""}</p>
+        <p>${pick(item.title)}</p>
       </div>
     </div>
   `;
@@ -176,25 +243,26 @@ function renderTravauxItems() {
       : travauxData.items.filter((item) => item.category === currentFilter);
 
   travauxGrid.innerHTML = filteredItems
-    .map(
-      (item) => `
+    .map((item) => {
+      const tags = pick(item.tags) || [];
+      return `
         <article class="travail-card" data-id="${item.id}">
           <div class="travail-media-placeholder">
             <div>
-              <p>Image / Vidéo plus tard</p>
-              <p>${item.title}</p>
+              <p>${config.labels?.[currentLanguage]?.mediaLater || ""}</p>
+              <p>${pick(item.title)}</p>
             </div>
           </div>
           <div class="travail-body">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
+            <h3>${pick(item.title)}</h3>
+            <p>${pick(item.description)}</p>
             <div class="travail-meta">
-              ${item.tags.map((tag) => `<span class="meta-pill">${tag}</span>`).join("")}
+              ${tags.map((tag) => `<span class="meta-pill">${tag}</span>`).join("")}
             </div>
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 
   travauxGrid.querySelectorAll(".travail-card").forEach((card) => {
@@ -209,43 +277,59 @@ function renderMateriaux() {
   if (!materiauxGrid || !Array.isArray(materiauxData)) return;
 
   materiauxGrid.innerHTML = materiauxData
-    .map(
-      (item) => `
+    .map((item) => {
+      const tags = pick(item.tags) || [];
+      return `
         <article class="materiau-card">
           <div class="materiau-media-placeholder">
             <div>
-              <p>Image produit plus tard</p>
-              <p>${item.title}</p>
+              <p>${config.labels?.[currentLanguage]?.productLater || ""}</p>
+              <p>${pick(item.title)}</p>
             </div>
           </div>
           <div class="materiau-body">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
+            <h3>${pick(item.title)}</h3>
+            <p>${pick(item.description)}</p>
             <div class="materiau-meta">
-              ${item.tags.map((tag) => `<span class="meta-pill">${tag}</span>`).join("")}
+              ${tags.map((tag) => `<span class="meta-pill">${tag}</span>`).join("")}
             </div>
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
+}
+
+function renderAll() {
+  applyLanguageSettings();
+  renderNavigation();
+  renderConfig();
+  renderInfo();
+  renderTravauxFilters();
+  renderTravauxItems();
+  renderMateriaux();
 }
 
 function setupMenu() {
   if (!menuToggle || !siteNav) return;
 
-  menuToggle.addEventListener("click", function (event) {
+  menuToggle.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     const isOpen = siteNav.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+  siteNav.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
       siteNav.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
-    });
+    }
+
+    if (event.target.classList.contains("filter-btn")) {
+      siteNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
   });
 
   document.addEventListener("click", (event) => {
@@ -253,6 +337,29 @@ function setupMenu() {
       siteNav.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
     }
+  });
+}
+
+function setupFilters() {
+  if (!travauxFilters) return;
+
+  travauxFilters.addEventListener("click", (event) => {
+    const button = event.target.closest(".filter-btn");
+    if (!button) return;
+
+    currentFilter = button.dataset.filter;
+    renderTravauxFilters();
+    renderTravauxItems();
+  });
+}
+
+function setupLanguageToggle() {
+  if (!langToggle) return;
+
+  langToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "ar" ? "fr" : "ar";
+    localStorage.setItem("siteLanguage", currentLanguage);
+    renderAll();
   });
 }
 
@@ -271,12 +378,10 @@ function setupModal() {
 }
 
 function init() {
-  renderConfig();
-  renderInfo();
-  renderTravauxFilters();
-  renderTravauxItems();
-  renderMateriaux();
+  renderAll();
   setupMenu();
+  setupFilters();
+  setupLanguageToggle();
   setupModal();
 }
 
@@ -284,4 +389,4 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
 } else {
   init();
-};
+}
