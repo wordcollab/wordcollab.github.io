@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BnD Déco</title>
+  <title>GhliZan | Faux plafonds & décoration intérieure</title>
   <meta
     name="description"
-    content="BnD Déco à Relizane : faux plafonds, cloisons, finitions intérieures et travaux de décoration."
+    content="GhliZan à Relizane, Algérie : faux plafonds, cloisons, finitions intérieures et décoration avec un rendu propre et professionnel."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,7 @@
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="container header-inner">
       <button class="lang-toggle" type="button" aria-label="Changer la langue">
         <i class="fa-solid fa-globe"></i>
@@ -37,21 +37,21 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a href="#top" class="brand-logo" aria-label="BnD Déco">
-        <img src="assets/images/logo.png" alt="Logo BnD Déco" />
+      <a href="#top" class="brand-logo" aria-label="GhliZan">
+        <img src="assets/images/logo.png" alt="Logo GhliZan" />
       </a>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container">
         <div class="hero-frame">
           <div class="hero-content">
             <p class="hero-kicker">Relizane, Algérie</p>
-            <h1>BnD Déco</h1>
+            <h1>Faux plafonds, cloisons et finitions modernes</h1>
             <p class="hero-text">
-              Faux plafonds, cloisons et décoration intérieure avec une finition soignée.
+              Un travail propre, élégant et bien pensé pour vos espaces résidentiels et professionnels.
             </p>
 
             <div class="hero-actions">
@@ -76,12 +76,12 @@
           <p class="section-label">Portfolio</p>
           <h2>Nos réalisations</h2>
           <p>
-            Une sélection de travaux en faux plafonds, cloisons, finitions et détails décoratifs.
+            Découvrez une sélection de projets en faux plafonds, cloisons et finitions intérieures.
           </p>
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
-          <!-- Les cartes seront injectées depuis data/projects.js -->
+          <!-- Cards injected from data/projects.js -->
         </div>
       </div>
     </section>
@@ -89,15 +89,15 @@
     <section class="products-section" id="produits">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Produits</p>
-          <h2>Galerie produits</h2>
+          <p class="section-label">Galerie Produits</p>
+          <h2>Matériaux et produits</h2>
           <p>
-            Les matériaux et finitions utilisés pour un rendu propre, durable et élégant.
+            Une galerie simple pour présenter les matériaux, finitions et éléments utilisés sur chantier.
           </p>
         </div>
 
         <div class="products-grid" id="productsGrid">
-          <!-- Les produits seront injectés depuis data/projects.js -->
+          <!-- Product cards injected from data/projects.js -->
         </div>
       </div>
     </section>
@@ -108,7 +108,7 @@
           <p class="section-label">Contact</p>
           <h2>Parlons de votre projet</h2>
           <p>
-            Pour une demande rapide, contactez-nous directement par téléphone ou WhatsApp.
+            Contactez-nous rapidement par WhatsApp ou par téléphone pour discuter de votre besoin.
           </p>
         </div>
 
@@ -134,10 +134,12 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>BnD Déco — Relizane, Algérie</p>
+      <p>GhliZan — Relizane, Algérie</p>
+
       <div class="footer-links">
-        <a href="tel:+213672253570">Appeler</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="https://wa.me/213672253570" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="tel:+213672253570">Téléphone</a>
       </div>
     </div>
   </footer>
@@ -145,5 +147,6 @@
   <script src="data/config.js"></script>
   <script src="data/info.js"></script>
   <script src="data/projects.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
