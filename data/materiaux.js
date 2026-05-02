@@ -1,98 +1,44 @@
-window.materiauxData = [
+window.siteMateriaux = [
   {
-    id: "materiau-01",
-    title: {
-      ar: "PVC ماربر",
-      fr: "PVC Marbre"
-    },
-    description: {
-      ar: "ألواح ديكورية بمظهر الرخام متوفرة في السوق لتغليف الجدران والمساحات الداخلية.",
-      fr: "Panneaux décoratifs effet marbre disponibles sur le marché pour murs et espaces intérieurs."
-    },
-    cover: "",
-    tags: {
-      ar: ["PVC", "رخام", "سوق"],
-      fr: ["PVC", "Marbre", "Marché"]
-    }
+    id: 1,
+    title: "Plaques BA13",
+    type: "Plaques de plâtre",
+    description: "Matériau utilisé pour les cloisons, les faux plafonds et différents travaux d’aménagement intérieur.",
+    image: "assets/images/materiaux/materiau-1.jpg"
   },
   {
-    id: "materiau-02",
-    title: {
-      ar: "WPC جداري",
-      fr: "WPC Mural"
-    },
-    description: {
-      ar: "تغليف جداري بطابع الخشب متوفر في السوق للاستعمالات الداخلية الحديثة.",
-      fr: "Revêtement mural décoratif à aspect bois disponible sur le marché pour habillage intérieur moderne."
-    },
-    cover: "",
-    tags: {
-      ar: ["WPC", "خشب", "ديكور"],
-      fr: ["WPC", "Bois", "Décoration"]
-    }
+    id: 2,
+    title: "Rails et montants métalliques",
+    type: "Structure",
+    description: "Éléments essentiels pour créer une ossature stable, droite et bien alignée.",
+    image: "assets/images/materiaux/materiau-2.jpg"
   },
   {
-    id: "materiau-03",
-    title: {
-      ar: "Chipboard ديكوري",
-      fr: "Chipboard Décoratif"
-    },
-    description: {
-      ar: "ألواح ديكورية جاهزة لتغليف الجدران الداخلية حسب الموديلات المتوفرة.",
-      fr: "Panneaux décoratifs utilisés pour l’habillage mural intérieur selon les modèles disponibles."
-    },
-    cover: "",
-    tags: {
-      ar: ["ألواح", "تغليف", "داخلي"],
-      fr: ["Chipboard", "Panneau", "Habillage"]
-    }
+    id: 3,
+    title: "Bandes à joint et enduit",
+    type: "Finition",
+    description: "Produits indispensables pour des joints propres et une surface prête à la finition.",
+    image: "assets/images/materiaux/materiau-3.jpg"
   },
   {
-    id: "materiau-04",
-    title: {
-      ar: "مولورات ديكورية",
-      fr: "Moulures Décoratives"
-    },
-    description: {
-      ar: "عناصر زخرفية جدارية متوفرة بعدة أشكال للديكور الكلاسيكي أو العصري.",
-      fr: "Éléments décoratifs muraux disponibles en plusieurs styles pour compositions classiques et modernes."
-    },
-    cover: "",
-    tags: {
-      ar: ["مولورات", "جدار", "ديكور"],
-      fr: ["Moulures", "Mur", "Décor"]
-    }
+    id: 4,
+    title: "Panneaux décoratifs PU Stone",
+    type: "Revêtement mural",
+    description: "Panneaux imitation pierre pour un effet décoratif moderne, léger et élégant.",
+    image: "assets/images/materiaux/materiau-4.jpg"
   },
   {
-    id: "materiau-05",
-    title: {
-      ar: "PVC للسقف",
-      fr: "PVC pour plafond"
-    },
-    description: {
-      ar: "ألواح أو شرائح PVC خفيفة ومناسبة للأسقف الداخلية ومتوفرة بعدة قياسات.",
-      fr: "Lames PVC utilisées pour faux plafonds et habillage intérieur, disponibles en plusieurs dimensions."
-    },
-    cover: "",
-    tags: {
-      ar: ["PVC", "سقف", "داخلي"],
-      fr: ["PVC", "Plafond", "Intérieur"]
-    }
+    id: 5,
+    title: "Accessoires de pliage",
+    type: "Technique",
+    description: "Éléments utilisés pour réaliser des formes décoratives précises sur plaques de plâtre.",
+    image: "assets/images/materiaux/materiau-5.jpg"
   },
   {
-    id: "materiau-06",
-    title: {
-      ar: "حجر ثلاثي الأبعاد",
-      fr: "Pierre 3D"
-    },
-    description: {
-      ar: "مادة ديكورية بجمالية الحجر لإبراز بعض الجدران أو المساحات الداخلية.",
-      fr: "Revêtement décoratif imitation pierre utilisé pour murs d’accent et espaces intérieurs."
-    },
-    cover: "",
-    tags: {
-      ar: ["حجر 3D", "جدار", "ديكور"],
-      fr: ["Pierre 3D", "Mur", "Décoration"]
-    }
+    id: 6,
+    title: "Produits de finition intérieure",
+    type: "Décoration",
+    description: "Matériaux complémentaires pour améliorer l’aspect final et la qualité visuelle du chantier.",
+    image: "assets/images/materiaux/materiau-6.jpg"
   }
 ];
