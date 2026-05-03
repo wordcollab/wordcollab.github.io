@@ -1,44 +1,58 @@
 window.siteTravaux = [
   {
     id: 1,
-    title: "Cloison en plaques BA13",
-    category: "Cloisons",
-    description: "Réalisation de séparation intérieure propre et moderne pour mieux organiser l’espace.",
+    title: "Faux plafond simple BA13",
+    category: "Faux plafonds",
+    description: "Plafond simple et propre en BA13 avec finition moderne pour les espaces intérieurs.",
     image: "assets/images/travaux/travail-1.jpg"
   },
   {
     id: 2,
-    title: "Faux plafond moderne",
-    category: "Faux plafonds",
-    description: "Plafond décoratif avec lignes nettes et finition soignée pour salon, chambre ou commerce.",
+    title: "Faux plafond avec caisson",
+    category: "Caisson",
+    description: "Caisson décoratif classique avec spots pour apporter relief et élégance au plafond.",
     image: "assets/images/travaux/travail-2.jpg"
   },
   {
     id: 3,
-    title: "Habillage mural intérieur",
-    category: "Habillage mural",
-    description: "Solution décorative pour améliorer l’esthétique d’un mur avec un rendu propre et élégant.",
+    title: "Faux plafond lumineux LED",
+    category: "LED",
+    description: "Caisson lumineux avec bande LED intégrée pour un rendu moderne et une ambiance élégante.",
     image: "assets/images/travaux/travail-3.jpg"
   },
   {
     id: 4,
-    title: "Travail de finition intérieure",
-    category: "Finitions",
-    description: "Finitions précises pour obtenir une surface régulière, propre et prête à la mise en valeur.",
+    title: "Faux plafond Shadow Gap",
+    category: "Shadow Gap",
+    description: "Plafond flottant avec vide lumineux pour un style contemporain et soigné.",
     image: "assets/images/travaux/travail-4.jpg"
   },
   {
     id: 5,
-    title: "Pliage décoratif sur plaque",
-    category: "Pliage",
-    description: "Application de la technique de pliage pour créer des formes décoratives sans coupe apparente.",
+    title: "Habillage des murs en placo-plâtre",
+    category: "Habillage",
+    description: "Habillage et mise à niveau des murs avec plaques de plâtre pour une finition nette.",
     image: "assets/images/travaux/travail-5.jpg"
   },
   {
     id: 6,
-    title: "Pose de pierre décorative PU Stone",
-    category: "PU Stone",
-    description: "Installation de panneaux imitation pierre pour une finition intérieure moderne et légère.",
+    title: "Pliage BA13",
+    category: "Pliage",
+    description: "Technique de pliage des plaques BA13 pour créer des formes décoratives sans coupe visible.",
     image: "assets/images/travaux/travail-6.jpg"
+  },
+  {
+    id: 7,
+    title: "Cloisons de séparation BA13",
+    category: "Cloisons",
+    description: "Création de cloisons en plaques de plâtre pour organiser et séparer les espaces intérieurs.",
+    image: "assets/images/travaux/travail-7.jpg"
+  },
+  {
+    id: 8,
+    title: "Caisson latéral lumineux LED",
+    category: "Éclairage",
+    description: "Caisson mural latéral avec bande LED cachée pour une finition décorative élégante.",
+    image: "assets/images/travaux/travail-8.jpg"
   }
 ];
