@@ -24,39 +24,40 @@
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="container header-inner">
-      <button class="lang-toggle" type="button" aria-label="Changer la langue">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Changer la langue">
         <i class="fa-solid fa-globe"></i>
       </button>
 
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#top">Accueil</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#produits">Produits</a>
-        <a href="#contact">Contact</a>
+        <a id="navHome" href="#accueil">Accueil</a>
+        <a id="navPortfolio" href="#portfolio">Portfolio</a>
+        <a id="navProducts" href="#produits">Produits</a>
+        <a id="navContact" href="#contact">Contact</a>
       </nav>
 
-      <a href="#top" class="brand-logo" aria-label="GhliZan">
+      <a href="#accueil" class="brand-logo" aria-label="GhliZan">
         <img src="assets/images/logo.png" alt="Logo GhliZan" />
       </a>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero">
+    <section class="hero" id="accueil">
       <div class="container">
         <div class="hero-frame">
           <div class="hero-content">
-            <p class="hero-kicker">Relizane, Algérie</p>
-            <h1>Faux plafonds, cloisons et finition intérieure moderne</h1>
-            <p class="hero-text">
+            <p class="hero-kicker" id="heroLocation">Relizane, Algérie</p>
+            <h1 id="heroTitle">Faux plafonds, cloisons et finition intérieure moderne</h1>
+            <p class="hero-text" id="heroText">
               Un savoir-faire propre, précis et élégant pour valoriser vos espaces résidentiels et professionnels.
             </p>
 
             <div class="hero-actions">
-              <a href="#portfolio" class="btn btn-primary">Découvrir nos travaux</a>
+              <a id="heroPrimaryBtn" href="#portfolio" class="btn btn-primary">Découvrir nos travaux</a>
               <a
+                id="heroSecondaryBtn"
                 href="https://wa.me/213672253570"
                 class="btn btn-outline"
                 target="_blank"
@@ -73,41 +74,37 @@
     <section class="portfolio-section" id="portfolio">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Portfolio</p>
-          <h2>Nos réalisations</h2>
-          <p>
+          <p class="section-label" id="portfolioLabel">Portfolio</p>
+          <h2 id="portfolioTitle">Nos réalisations</h2>
+          <p id="portfolioText">
             Une sélection de travaux en cloisons, faux plafonds, habillage mural et finitions.
           </p>
         </div>
 
-        <div class="portfolio-grid" id="portfolioGrid">
-          <!-- Les cartes portfolio seront injectées depuis data/travaux.js -->
-        </div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
       </div>
     </section>
 
     <section class="products-section" id="produits">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Galerie Produits</p>
-          <h2>Matériaux et produits</h2>
-          <p>
+          <p class="section-label" id="productsLabel">Galerie Produits</p>
+          <h2 id="productsTitle">Matériaux et produits</h2>
+          <p id="productsText">
             Les matériaux et éléments utilisés pour garantir un rendu propre, durable et esthétique.
           </p>
         </div>
 
-        <div class="products-grid" id="productsGrid">
-          <!-- Les cartes produits seront injectées depuis data/materiaux.js -->
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
       <div class="container">
         <div class="section-heading light">
-          <p class="section-label">Contact</p>
-          <h2>Parlons de votre projet</h2>
-          <p>
+          <p class="section-label" id="contactLabel">Contact</p>
+          <h2 id="contactTitle">Parlons de votre projet</h2>
+          <p id="contactText">
             Contactez-nous rapidement par WhatsApp ou téléphone pour discuter de votre besoin.
           </p>
         </div>
@@ -120,12 +117,12 @@
             rel="noopener noreferrer"
           >
             <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
+            <span id="contactWhatsappLabel">WhatsApp</span>
           </a>
 
           <a href="tel:+213672253570" class="btn btn-phone">
             <i class="fa-solid fa-phone"></i>
-            0672 25 35 70
+            <span id="contactPhoneLabel">0672 25 35 70</span>
           </a>
         </div>
       </div>
@@ -134,13 +131,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>GhliZan — Relizane, Algérie</p>
+      <p id="footerLocation">Relizane, Algérie</p>
 
       <div class="footer-links">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#produits">Produits</a>
-        <a href="https://wa.me/213672253570" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="tel:+213672253570">Téléphone</a>
+        <a id="footerPortfolio" href="#portfolio">Portfolio</a>
+        <a id="footerProducts" href="#produits">Produits</a>
+        <a id="footerWhatsapp" href="https://wa.me/213672253570" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a id="footerPhone" href="tel:+213672253570">Téléphone</a>
       </div>
     </div>
   </footer>
