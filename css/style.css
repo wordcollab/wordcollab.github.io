@@ -504,3 +504,57 @@ button {
   color: var(--color-text-soft);
   background: #fafafa;
 }
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .header-inner {
+  grid-template-columns: auto 1fr 44px;
+}
+
+html[dir="rtl"] .brand-logo {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .main-nav {
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-heading,
+html[dir="rtl"] .portfolio-body,
+html[dir="rtl"] .product-body,
+html[dir="rtl"] .footer-inner {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-actions,
+html[dir="rtl"] .contact-actions,
+html[dir="rtl"] .footer-links {
+  direction: rtl;
+}
+
+html[dir="rtl"] .footer-inner {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .section-heading.light {
+  text-align: right;
+}
+
+html[dir="rtl"] .btn i {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+html[dir="ltr"] .btn i {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] .footer-inner {
+    text-align: right;
+  }
+}
